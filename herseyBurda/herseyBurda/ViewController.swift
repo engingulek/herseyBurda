@@ -12,13 +12,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
 
     @IBOutlet weak var productCollectionView: UICollectionView!
-    var test = [String]()
+    var products = [Product]()
     
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         test = ["A","B","C","D"]
+         
+        let product1 = Product(productImageName: "babySal", produtName: "Bebek Hamak", productCount: 300, productCategorieName: "Bebek")
+        let product2 = Product(productImageName: "book", produtName: "Kitap", productCount: 20, productCategorieName: "Kitap ve Kırtasiye")
+        let product3 = Product(productImageName: "tshirt", produtName: "Tişört", productCount: 50, productCategorieName: "Giyim")
+        
+        products.append(product1)
+        products.append(product2)
+        products.append(product3)
+        
+        
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
         let design : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -52,19 +61,27 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,CollectionViewCellProtocol{
+    func productAddtoCartProtocol(indexPath: IndexPath) {
+        print("Ürün İsmi : \(products[indexPath.row].productName)")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return test.count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
       let cell =  productCollectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductCollectionViewCell
-        
-        cell.productNameLabel.text = test[indexPath.row]
+        let getProduct = products[indexPath.row]
+        cell.productNameLabel.text = getProduct.productName
+        cell.productCountLabel.text = "\(getProduct.productCount) TL"
+        cell.productImageView.image = UIImage(named: getProduct.productImageName)
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 15
+        cell.productAddtoCartProtocol = self;
+        cell.indexPath = indexPath
         
         
         return cell

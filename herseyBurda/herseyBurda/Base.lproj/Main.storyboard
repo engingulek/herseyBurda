@@ -46,7 +46,7 @@
                                                         <constraint firstAttribute="width" constant="168" id="TGN-jz-3e7"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjW-8Y-rV8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjW-8Y-rV8">
                                                     <rect key="frame" x="57" y="170" width="86" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -61,6 +61,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STa-G6-RDH">
                                                     <rect key="frame" x="42" y="283" width="109" height="30"/>
                                                     <state key="normal" title="Add Cart"/>
+                                                    <connections>
+                                                        <action selector="productAddtoCart:" destination="4fm-G3-2PW" eventType="touchUpInside" id="5SU-3U-ea5"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -80,7 +83,6 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="361"/>
                                         <connections>
-                                            <outlet property="productAddCart" destination="STa-G6-RDH" id="9OT-if-uY8"/>
                                             <outlet property="productCountLabel" destination="2uX-hw-swb" id="opO-hl-yRp"/>
                                             <outlet property="productImageView" destination="t8Z-7h-bcm" id="wyE-oq-5YF"/>
                                             <outlet property="productNameLabel" destination="vjW-8Y-rV8" id="yCc-eH-zeX"/>

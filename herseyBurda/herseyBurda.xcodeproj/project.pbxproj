@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7DCBDD2226EE21A800EF0829 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCBDD2126EE21A800EF0829 /* ProductCollectionViewCell.swift */; };
+		7DCBDD2526EE2EF500EF0829 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCBDD2426EE2EF500EF0829 /* Product.swift */; };
 		7DEE13D726ED466700F628AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE13D626ED466700F628AA /* AppDelegate.swift */; };
 		7DEE13D926ED466700F628AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE13D826ED466700F628AA /* SceneDelegate.swift */; };
 		7DEE13DB26ED466700F628AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE13DA26ED466700F628AA /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		7DCBDD2126EE21A800EF0829 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DCBDD2426EE2EF500EF0829 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7DEE13D326ED466700F628AA /* herseyBurda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = herseyBurda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEE13D626ED466700F628AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEE13D826ED466700F628AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				7DEE13E426ED466B00F628AA /* Info.plist */,
 				7DEE13EB26ED493B00F628AA /* CategoriesVC.swift */,
 				7DCBDD2126EE21A800EF0829 /* ProductCollectionViewCell.swift */,
+				7DCBDD2426EE2EF500EF0829 /* Product.swift */,
 			);
 			path = herseyBurda;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				7DCBDD2226EE21A800EF0829 /* ProductCollectionViewCell.swift in Sources */,
 				7DEE13D726ED466700F628AA /* AppDelegate.swift in Sources */,
 				7DEE13D926ED466700F628AA /* SceneDelegate.swift in Sources */,
+				7DCBDD2526EE2EF500EF0829 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
