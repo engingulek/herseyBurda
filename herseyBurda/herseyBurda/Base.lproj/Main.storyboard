@@ -107,11 +107,85 @@
                     <connections>
                         <outlet property="productCollectionView" destination="lyQ-mf-s7H" id="A04-QP-dd3"/>
                         <outlet property="searchBar" destination="wHw-ZD-VSf" id="QQ3-EQ-KgE"/>
+                        <segue destination="6jL-bc-aiD" kind="presentation" identifier="toProductDetails" id="naU-QE-4dw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="93.75"/>
+        </scene>
+        <!--Product Details View Controller-->
+        <scene sceneID="u9w-i3-qOh">
+            <objects>
+                <viewController storyboardIdentifier="toDetailsProdutc" id="6jL-bc-aiD" customClass="ProductDetailsViewController" customModule="herseyBurda" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xVj-xr-3PT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36P-3j-AUa">
+                                <rect key="frame" x="87" y="40" width="240" height="245"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="245" id="8AT-kv-Xwn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="245" id="jMN-19-2Xv"/>
+                                    <constraint firstAttribute="width" constant="240" id="kDJ-Qs-R2d"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9c-rE-2j7">
+                                <rect key="frame" x="69" y="338" width="276" height="50"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4sZ-xm-h09"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abz-YR-Vv5">
+                                <rect key="frame" x="69" y="461" width="258" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="9R0-VQ-eLe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1T-pf-oqh">
+                                <rect key="frame" x="69" y="625" width="258" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KQq-l0-oVI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="caa-Uv-5Lo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="abz-YR-Vv5" firstAttribute="top" secondItem="x9c-rE-2j7" secondAttribute="bottom" constant="73" id="6ZU-fN-k6m"/>
+                            <constraint firstItem="abz-YR-Vv5" firstAttribute="leading" secondItem="L1T-pf-oqh" secondAttribute="leading" id="75q-wO-Uv1"/>
+                            <constraint firstItem="x9c-rE-2j7" firstAttribute="leading" secondItem="abz-YR-Vv5" secondAttribute="leading" id="7Nf-Wz-3N9"/>
+                            <constraint firstItem="abz-YR-Vv5" firstAttribute="trailing" secondItem="L1T-pf-oqh" secondAttribute="trailing" id="8sK-IN-Xkx"/>
+                            <constraint firstItem="x9c-rE-2j7" firstAttribute="leading" secondItem="caa-Uv-5Lo" secondAttribute="leading" constant="69" id="Dcd-Nm-Dxm"/>
+                            <constraint firstItem="36P-3j-AUa" firstAttribute="trailing" secondItem="abz-YR-Vv5" secondAttribute="trailing" id="IMl-lu-Aq4"/>
+                            <constraint firstItem="x9c-rE-2j7" firstAttribute="top" secondItem="36P-3j-AUa" secondAttribute="bottom" constant="53" id="PKi-Af-0Ko"/>
+                            <constraint firstItem="36P-3j-AUa" firstAttribute="centerX" secondItem="x9c-rE-2j7" secondAttribute="centerX" id="V1T-6p-6XS"/>
+                            <constraint firstItem="36P-3j-AUa" firstAttribute="top" secondItem="caa-Uv-5Lo" secondAttribute="top" constant="40" id="YRl-Sl-HBN"/>
+                            <constraint firstItem="caa-Uv-5Lo" firstAttribute="bottom" secondItem="L1T-pf-oqh" secondAttribute="bottom" constant="123" id="cg5-bC-cn7"/>
+                            <constraint firstItem="36P-3j-AUa" firstAttribute="leading" secondItem="caa-Uv-5Lo" secondAttribute="leading" constant="87" id="m5k-0n-aT6"/>
+                            <constraint firstItem="36P-3j-AUa" firstAttribute="centerX" secondItem="xVj-xr-3PT" secondAttribute="centerX" id="zF5-lr-1G5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailProductCountLabel" destination="abz-YR-Vv5" id="JhQ-sr-8sh"/>
+                        <outlet property="detailProductImageView" destination="36P-3j-AUa" id="LRy-Vl-3in"/>
+                        <outlet property="detailProductNameLabel" destination="x9c-rE-2j7" id="KNB-A6-NTs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dn1-x8-yXO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915.9420289855075" y="93.75"/>
         </scene>
         <!--Kategoriler-->
         <scene sceneID="g2s-le-N8P">
@@ -168,6 +242,12 @@
         <image name="0" width="50" height="50"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="rectangle.grid.1x2" catalog="system" width="128" height="101"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

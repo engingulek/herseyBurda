@@ -35,27 +35,12 @@ class ViewController: UIViewController {
         let width = self.productCollectionView.frame.size.width
         
         design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        
-        
-        
         design.itemSize = CGSize(width: (width-30)/2, height: (690-30)/2)
-        
         design.minimumLineSpacing = 30
-        
         
         productCollectionView!.collectionViewLayout = design
         
-        
-    
-        
-       
-        
-
- 
-        
-        
     }
-
 
 }
 
@@ -83,8 +68,18 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         cell.productAddtoCartProtocol = self;
         cell.indexPath = indexPath
         
-        
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      let storybord = UIStoryboard(name: "Main", bundle: nil)
+        let gotoWillViewController = storybord.instantiateViewController(identifier: "toDetailsProdutc") as! ProductDetailsViewController
+        let gotoWillProduct = products[indexPath.row]
+        gotoWillViewController.detailProductImageName = gotoWillProduct.productImageName
+        gotoWillViewController.detailProductName = gotoWillProduct.productName
+        gotoWillViewController.detailProductCount = gotoWillProduct.productCount
+        self.present(gotoWillViewController, animated: true, completion: nil)
     }
     
     
