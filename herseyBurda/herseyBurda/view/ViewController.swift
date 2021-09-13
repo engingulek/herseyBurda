@@ -24,11 +24,11 @@ class ViewController: UIViewController {
         
         
          
-        let product1 = Product(productId: "babayHammock\(UUID().uuidString)", productImageName: "babySal", produtName: "Bebek Hamak", productCount: 300, productCategorieName: "Bebek")
+        let product1 = Product(productId: "babayHammock", productImageName: "babySal", produtName: "Bebek Hamak", productCount: 300, productCategorieName: "Bebek")
         
-        let product2 = Product(productId: "book\(UUID().uuidString)", productImageName: "book", produtName: "Kitap", productCount: 20, productCategorieName: "Kitap ve Kırtasiye")
+        let product2 = Product(productId: "book", productImageName: "book", produtName: "Kitap", productCount: 20, productCategorieName: "Kitap ve Kırtasiye")
         
-        let product3 = Product(productId: "tshirt\(UUID().uuidString)", productImageName: "tshirt", produtName: "Tişört", productCount: 50, productCategorieName: "Giyim")
+        let product3 = Product(productId: "tshirt", productImageName: "tshirt", produtName: "Tişört", productCount: 50, productCategorieName: "Giyim")
         
         products.append(product1)
         products.append(product2)
@@ -56,28 +56,21 @@ class ViewController: UIViewController {
 extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,CollectionViewCellProtocol{
     func productAddtoCartProtocol(indexPath: IndexPath) {
         
-        
-        
-        
         let cartProduct = products[indexPath.row]
-       
         
         let firestoreDatabase =  Firestore.firestore();
-        
         // oluşturdın ama kullanmadın hatası geçerli değil çalışmakta
         var firestoreReferance : DocumentReference? = nil
        // [String : Any] Dictionary oolduğunu belirtiyoruz
-        let firestoreCart = ["cartProduct":cartProduct.productId,"cartProductImageName":cartProduct.productImageName,"cartProductName":cartProduct.productName,"cartProductCount":cartProduct.productCount,"piece":1] as [String : Any]
+        let firestoreCart = ["cartProduct":cartProduct.productId,"cartProductImageName":cartProduct.productImageName,"cartProductName":cartProduct.productName,"cartProductCount":cartProduct.productCount] as [String : Any]
         
         
         
-       firestoreReferance = firestoreDatabase.collection("Cart").addDocument(data: firestoreCart, completion: { (error) in
-            
-            if error != nil {
-                self.alerMessage(title: "Hata", message: error?.localizedDescription ?? "Herhangi bir hata oluştu")
-                
-            }
-        })
+        firestoreDatabase.collection("cart").document(cartProduct.productId).setData(firestoreCart)
+        
+        
+        
+    
             
     }
     
