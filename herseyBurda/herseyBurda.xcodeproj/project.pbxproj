@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,7 +62,6 @@
 				D01BC0A579E4B6F07B32A1F0 /* Pods-herseyBurda.debug.xcconfig */,
 				480AF98D6029A3DFC7412173 /* Pods-herseyBurda.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,6 +76,13 @@
 				7DB8CA1726EF653400811206 /* CartProductTableViewCell.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		7DB8CA3426EF7F5200811206 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		7DEE13CA26ED466700F628AA = {
@@ -100,14 +106,15 @@
 		7DEE13D526ED466700F628AA /* herseyBurda */ = {
 			isa = PBXGroup;
 			children = (
+				7DB8CA3426EF7F5200811206 /* model */,
 				7DB8CA1126EF61DE00811206 /* view */,
 				7DEE13D626ED466700F628AA /* AppDelegate.swift */,
 				7DEE13D826ED466700F628AA /* SceneDelegate.swift */,
 				7DEE13DC26ED466700F628AA /* Main.storyboard */,
 				7DEE13DF26ED466B00F628AA /* Assets.xcassets */,
 				7DEE13E126ED466B00F628AA /* LaunchScreen.storyboard */,
-				7DEE13E426ED466B00F628AA /* Info.plist */,
 				7DCBDD2426EE2EF500EF0829 /* Product.swift */,
+				7DEE13E426ED466B00F628AA /* Info.plist */,
 				7DB8CA1B26EF6CF800811206 /* GoogleService-Info.plist */,
 			);
 			path = herseyBurda;

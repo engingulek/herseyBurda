@@ -7,13 +7,16 @@
 
 import Foundation
 class Product {
+    var productId:String
     var productImageName:String
     var productName:String
     var productCount:Int
     var productCategorieName:String
     
     
-    init(productImageName:String,produtName:String,productCount:Int,productCategorieName:String) {
+    
+    init(productId:String,productImageName:String,produtName:String,productCount:Int,productCategorieName:String) {
+        self.productId = productId
         self.productImageName = productImageName
         self.productName = produtName
         self.productCount = productCount

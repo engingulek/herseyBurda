@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -13,15 +14,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var productCollectionView: UICollectionView!
     var products = [Product]()
-    var cart = [Product]()
+
+ 
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
          
-        let product1 = Product(productImageName: "babySal", produtName: "Bebek Hamak", productCount: 300, productCategorieName: "Bebek")
-        let product2 = Product(productImageName: "book", produtName: "Kitap", productCount: 20, productCategorieName: "Kitap ve Kırtasiye")
-        let product3 = Product(productImageName: "tshirt", produtName: "Tişört", productCount: 50, productCategorieName: "Giyim")
+        let product1 = Product(productId: "babayHammock\(UUID().uuidString)", productImageName: "babySal", produtName: "Bebek Hamak", productCount: 300, productCategorieName: "Bebek")
+        
+        let product2 = Product(productId: "book\(UUID().uuidString)", productImageName: "book", produtName: "Kitap", productCount: 20, productCategorieName: "Kitap ve Kırtasiye")
+        
+        let product3 = Product(productId: "tshirt\(UUID().uuidString)", productImageName: "tshirt", produtName: "Tişört", productCount: 50, productCategorieName: "Giyim")
         
         products.append(product1)
         products.append(product2)
@@ -49,9 +56,39 @@ class ViewController: UIViewController {
 extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,CollectionViewCellProtocol{
     func productAddtoCartProtocol(indexPath: IndexPath) {
         
-        cart.append(products[indexPath.row])
         
-        print("Ürün İsmi : \(cart[indexPath.row].productName)")
+        
+        
+        let cartProduct = products[indexPath.row]
+       
+        
+        let firestoreDatabase =  Firestore.firestore();
+        
+        // oluşturdın ama kullanmadın hatası geçerli değil çalışmakta
+        var firestoreReferance : DocumentReference? = nil
+       // [String : Any] Dictionary oolduğunu belirtiyoruz
+        let firestoreCart = ["cartProduct":cartProduct.productId,"cartProductImageName":cartProduct.productImageName,"cartProductName":cartProduct.productName,"cartProductCount":cartProduct.productCount,"piece":1] as [String : Any]
+        
+        
+        
+       firestoreReferance = firestoreDatabase.collection("Cart").addDocument(data: firestoreCart, completion: { (error) in
+            
+            if error != nil {
+                self.alerMessage(title: "Hata", message: error?.localizedDescription ?? "Herhangi bir hata oluştu")
+                
+            }
+        })
+            
+    }
+    
+  
+    
+    
+    func alerMessage (title:String,message:String){
+        let alertAction = UIAlertAction(title: title, style: UIAlertAction.Style.default, handler: nil)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
