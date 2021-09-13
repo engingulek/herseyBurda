@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7D6D9E9526EE9679003F11AD /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D9E9426EE9679003F11AD /* ProductDetailsViewController.swift */; };
+		7DB8CA1426EF621900811206 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8CA1326EF621900811206 /* CartViewController.swift */; };
+		7DB8CA1826EF653400811206 /* CartProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8CA1726EF653400811206 /* CartProductTableViewCell.swift */; };
+		7DB8CA1C26EF6CF800811206 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DB8CA1B26EF6CF800811206 /* GoogleService-Info.plist */; };
 		7DCBDD2226EE21A800EF0829 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCBDD2126EE21A800EF0829 /* ProductCollectionViewCell.swift */; };
 		7DCBDD2526EE2EF500EF0829 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCBDD2426EE2EF500EF0829 /* Product.swift */; };
 		7DEE13D726ED466700F628AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE13D626ED466700F628AA /* AppDelegate.swift */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		7D6D9E9426EE9679003F11AD /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		7DB8CA1326EF621900811206 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		7DB8CA1726EF653400811206 /* CartProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductTableViewCell.swift; sourceTree = "<group>"; };
+		7DB8CA1B26EF6CF800811206 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7DCBDD2126EE21A800EF0829 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DCBDD2426EE2EF500EF0829 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7DEE13D326ED466700F628AA /* herseyBurda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = herseyBurda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DB8CA1126EF61DE00811206 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE13DA26ED466700F628AA /* ViewController.swift */,
+				7DEE13EB26ED493B00F628AA /* CategoriesVC.swift */,
+				7DCBDD2126EE21A800EF0829 /* ProductCollectionViewCell.swift */,
+				7D6D9E9426EE9679003F11AD /* ProductDetailsViewController.swift */,
+				7DB8CA1326EF621900811206 /* CartViewController.swift */,
+				7DB8CA1726EF653400811206 /* CartProductTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		7DEE13CA26ED466700F628AA = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +83,15 @@
 		7DEE13D526ED466700F628AA /* herseyBurda */ = {
 			isa = PBXGroup;
 			children = (
+				7DB8CA1126EF61DE00811206 /* view */,
 				7DEE13D626ED466700F628AA /* AppDelegate.swift */,
 				7DEE13D826ED466700F628AA /* SceneDelegate.swift */,
-				7DEE13DA26ED466700F628AA /* ViewController.swift */,
 				7DEE13DC26ED466700F628AA /* Main.storyboard */,
 				7DEE13DF26ED466B00F628AA /* Assets.xcassets */,
 				7DEE13E126ED466B00F628AA /* LaunchScreen.storyboard */,
 				7DEE13E426ED466B00F628AA /* Info.plist */,
-				7DEE13EB26ED493B00F628AA /* CategoriesVC.swift */,
-				7DCBDD2126EE21A800EF0829 /* ProductCollectionViewCell.swift */,
 				7DCBDD2426EE2EF500EF0829 /* Product.swift */,
-				7D6D9E9426EE9679003F11AD /* ProductDetailsViewController.swift */,
+				7DB8CA1B26EF6CF800811206 /* GoogleService-Info.plist */,
 			);
 			path = herseyBurda;
 			sourceTree = "<group>";
@@ -137,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DEE13E326ED466B00F628AA /* LaunchScreen.storyboard in Resources */,
+				7DB8CA1C26EF6CF800811206 /* GoogleService-Info.plist in Resources */,
 				7DEE13E026ED466B00F628AA /* Assets.xcassets in Resources */,
 				7DEE13DE26ED466700F628AA /* Main.storyboard in Resources */,
 			);
@@ -153,7 +171,9 @@
 				7DEE13EC26ED493B00F628AA /* CategoriesVC.swift in Sources */,
 				7DEE13DB26ED466700F628AA /* ViewController.swift in Sources */,
 				7DCBDD2226EE21A800EF0829 /* ProductCollectionViewCell.swift in Sources */,
+				7DB8CA1426EF621900811206 /* CartViewController.swift in Sources */,
 				7DEE13D726ED466700F628AA /* AppDelegate.swift in Sources */,
+				7DB8CA1826EF653400811206 /* CartProductTableViewCell.swift in Sources */,
 				7DEE13D926ED466700F628AA /* SceneDelegate.swift in Sources */,
 				7DCBDD2526EE2EF500EF0829 /* Product.swift in Sources */,
 			);
@@ -312,7 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.herseyBurda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -331,7 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.herseyBurda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

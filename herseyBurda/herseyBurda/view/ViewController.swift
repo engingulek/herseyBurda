@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var productCollectionView: UICollectionView!
     var products = [Product]()
-    
+    var cart = [Product]()
    
     
     override func viewDidLoad() {
@@ -48,7 +48,10 @@ class ViewController: UIViewController {
 
 extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,CollectionViewCellProtocol{
     func productAddtoCartProtocol(indexPath: IndexPath) {
-        print("Ürün İsmi : \(products[indexPath.row].productName)")
+        
+        cart.append(products[indexPath.row])
+        
+        print("Ürün İsmi : \(cart[indexPath.row].productName)")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
